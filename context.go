@@ -693,7 +693,7 @@ func (dc *Context) SetFontFace(fontFace font.Face) {
 	dc.fontFace = fontFace
 	dc.fontHeight = float64(fontFace.Metrics().Height) / 64
 }
-func (dc *Context) LoadFontFaceFromBytes(font []byte, points float64) {
+func (dc *Context) LoadFontFaceFromBytes(font []byte, points float64) error {
 	face, err := LoadFontFace(path, points)
 	if err == nil {
 		dc.fontFace = face
